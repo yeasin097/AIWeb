@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Generate Image";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Generate Image</h2>
+
+    <div class="card shadow-sm p-4">
+        <form asp-action="GenerateImage" method="post">
+            <div class="mb-3">
+                <label for="prompt" class="form-label">Enter your prompt:</label>
+                <input type="text" id="prompt" name="prompt" class="form-control" placeholder="Type a description..." required />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Generate</button>
+        </form>
+    </div>
+
+    @if (ViewBag.ImageBase64 != null)
+    {
+        <div class="mt-5 text-center">
+            <h3 class="mb-3">Generated Image</h3>
+            <p><strong>Prompt:</strong> @ViewBag.Prompt</p>
+            <img src="@ViewBag.ImageBase64" alt="Generated Image" class="img-fluid rounded shadow-lg" style="max-width: 100%; height: auto;" />
+        </div>
+    }
+    else if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger mt-3">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+</div>

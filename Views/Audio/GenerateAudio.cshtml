@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Generate Audio";
+}
+@model GenerateAudioRequest
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Include Bootstrap CSS -->
+    @* <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> *@
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Generate Audio</h2>
+
+        <form action="/Audio/GenerateAudio" method="post" class="shadow p-4 rounded bg-light">
+            <div class="form-group">
+                <label for="prompt">Prompt</label>
+                <input type="text" class="form-control" id="prompt" name="prompt" asp-for="prompt" required placeholder="Enter prompt" />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" name="description" asp-for="description" required placeholder="Enter description" />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Generate Audio</button>
+        </form>
+
+        @if (ViewBag.AudioBase64 != null)
+        {
+            <div class="mt-4">
+                <h3>Generated Audio</h3>
+                <audio controls class="w-100">
+                    <source src="@ViewBag.AudioBase64" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        }
+        else if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-danger mt-4">
+                <p>@ViewBag.ErrorMessage</p>
+            </div>
+        }
+    </div>
+</body>
+</html>

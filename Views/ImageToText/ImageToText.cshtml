@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Image to Text";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Image to Text</h2>
+
+    <div class="card shadow-sm p-4">
+        <!-- Change the form action to ImageToText -->
+        <form asp-action="ImageToText" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload an image:</label>
+                <input type="file" id="image" name="image" class="form-control" accept="image/*" required />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Upload and Process</button>
+        </form>
+    </div>
+
+    @if (ViewBag.ImageBase64 != null && ViewBag.ResultText != null)
+    {
+        <div class="mt-5 text-center">
+            <h3 class="mb-3">Uploaded Image</h3>
+            <img src="@ViewBag.ImageBase64" alt="Uploaded Image" class="img-fluid rounded shadow-lg mb-4" style="max-width: 100%; height: auto;" />
+
+            <h3 class="mb-3">Generated Text</h3>
+            <p class="border p-3 rounded bg-light">@ViewBag.ResultText</p>
+        </div>
+    }
+    else if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger mt-3">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+</div>
