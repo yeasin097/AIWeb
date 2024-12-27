@@ -24,7 +24,7 @@ Installation
 
 1. Clone the repository:
 
-git clone https://github.com/your-username/AIWeb.git
+git clone https://github.com/yeasin097/AIWeb.git
 cd AIWeb
 
 2. Restore project dependencies:
