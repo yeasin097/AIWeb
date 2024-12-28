@@ -8,6 +8,8 @@ namespace MyMvcApp.Controllers
 {
     public class AudioController : Controller
     {
+
+        //https://colab.research.google.com/drive/1cA9hloozYVDBPn8ekWmvLFNPfHgnqiU-?usp=sharing
         private readonly HttpClient _httpClient;
 
         public AudioController(HttpClient httpClient)
@@ -27,7 +29,7 @@ namespace MyMvcApp.Controllers
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 // Send POST request to Python API
-                var response = await _httpClient.PostAsync("https://9415-34-125-196-194.ngrok-free.app/run_tts", content);
+                var response = await _httpClient.PostAsync("https://da7d-34-45-124-139.ngrok-free.app/run_tts", content);
 
                 if (response.IsSuccessStatusCode)
                 {

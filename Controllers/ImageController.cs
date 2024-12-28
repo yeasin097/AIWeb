@@ -4,8 +4,10 @@ using System.Threading.Tasks;
 
 public class ImageController : Controller
 {
+    //https://colab.research.google.com/drive/18au-Z53w8Q_qosxituOq65CZBfo5t2gH?usp=sharing GDrive
+    //https://colab.research.google.com/drive/19c6nnEv7nZujb-sdL2RT053QWgyuOynj?usp=sharing download
     private readonly HttpClient _httpClient;
-    private const string ColabServerUrl = "https://ed3c-34-169-3-97.ngrok-free.app/generate"; // Replace with your ngrok URL
+    private const string ColabServerUrl = "https://9b5f-34-126-109-196.ngrok-free.app/generate"; // Replace with your ngrok URL
 
     public ImageController(HttpClient httpClient)
     {

@@ -6,8 +6,9 @@ using System.IO;
 
 public class ImageToTextController : Controller
 {
+    //https://colab.research.google.com/drive/1_DFrlJV_P5_PytOUBBhlB09yEVuwESGO?usp=sharing direct run
     private readonly HttpClient _httpClient;
-    private const string ColabServerUrl = "https://5a5c-34-106-88-182.ngrok-free.app/process-image"; // Replace with your ngrok URL
+    private const string ColabServerUrl = "https://1c2a-35-193-180-9.ngrok-free.app/process-image"; // Replace with your ngrok URL
 
     public ImageToTextController(HttpClient httpClient)
     {

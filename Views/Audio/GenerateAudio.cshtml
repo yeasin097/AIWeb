@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Generate Audio";
 }
-@model GenerateAudioRequest
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,12 +18,12 @@
         <form action="/Audio/GenerateAudio" method="post" class="shadow p-4 rounded bg-light">
             <div class="form-group">
                 <label for="prompt">Prompt</label>
-                <input type="text" class="form-control" id="prompt" name="prompt" asp-for="prompt" required placeholder="Enter prompt" />
+                <input type="text" class="form-control" id="prompt" name="prompt"  required placeholder="Enter prompt" />
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" asp-for="description" required placeholder="Enter description" />
+                <input type="text" class="form-control" id="description" name="description"  required placeholder="Enter description" />
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">Generate Audio</button>
