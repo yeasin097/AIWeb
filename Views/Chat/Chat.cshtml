@@ -1,0 +1,31 @@
+﻿@model List<TextToAudioWebApp.Models.ChatMessage>
+
+<h1>OpenAPI Chat</h1>
+
+<div style="border: 1px solid #ccc; padding: 20px; max-width: 600px; margin: auto; border-radius: 10px; font-family: Arial, sans-serif;">
+    <!-- Chat Conversation -->
+    <div id="chat-container" style="height: 400px; overflow-y: auto; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var message in Model)
+            {
+                <div style="margin-bottom: 10px;">
+                    <strong>@message.Role:</strong>
+                    <p>@message.Content</p>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No conversation yet. Start by typing a message below.</p>
+        }
+    </div>
+
+    <!-- Chat Input -->
+    <form asp-action="Chat" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+        <textarea id="prompt" name="prompt" rows="4" placeholder="Type your message here..." style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+        <button type="submit" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+            Send
+        </button>
+    </form>
+</div>

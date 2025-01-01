@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        #drawingPageContainer {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+            #drawingPageContainer h1 {
+                margin-top: 20px;
+                font-size: 2rem;
+                color: #0056b3;
+            }
+
+            #drawingPageContainer canvas {
+                border: 2px solid #0056b3;
+                border-radius: 8px;
+                margin: 20px 0;
+                background-color: #ffffff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            #drawingPageContainer #controls {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            #drawingPageContainer button {
+                padding: 10px 15px;
+                font-size: 1rem;
+                background-color: black;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                #drawingPageContainer button:hover {
+                    background-color: #003d80;
+                }
+
+            #drawingPageContainer input[type="text"] {
+                padding: 8px;
+                font-size: 1rem;
+                width: 250px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+
+                #drawingPageContainer input[type="text"]:focus {
+                    outline: none;
+                    border-color: #0056b3;
+                    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+                }
+
+            #drawingPageContainer #downloadImage {
+                background-color: #28a745;
+            }
+
+                #drawingPageContainer #downloadImage:hover {
+                    background-color: #1c7e30;
+                }
+
+            #drawingPageContainer #clearCanvas {
+                background-color: #dc3545;
+            }
+
+                #drawingPageContainer #clearCanvas:hover {
+                    background-color: blueviolet;
+                }
+
+            #drawingPageContainer #generateAIImage {
+                background-color: purple;
+            }
+
+                #drawingPageContainer #generateAIImage:hover {
+                    background-color: #dc3545;
+                }
+
+            #drawingPageContainer footer {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #0056b3;
+                color: #fff;
+                text-align: center;
+                width: 100%;
+                font-size: 0.9rem;
+            }
+
+                #drawingPageContainer footer a {
+                    color: #ffd700;
+                    text-decoration: none;
+                }
+
+                    #drawingPageContainer footer a:hover {
+                        text-decoration: underline;
+                    }
+    </style>
+</head>
+<body>
+    <div id="drawingPageContainer">
+        <h1>Advanced AI Draw</h1>
+        <canvas id="drawingCanvas" width="800" height="600"></canvas>
+        <div id="controls">
+            <button id="freeDraw">Freehand Drawing</button>
+            <button id="drawRectangle">Rectangle</button>
+            <button id="drawCircle">Circle</button>
+            <button id="drawSquare">Square</button>
+            <button id="drawTriangle">Triangle</button>
+            <button id="rotateShape">Rotate Shape</button>
+            <button id="resizeShape">Resize Shape</button>
+            <button id="deleteShape">Delete Shape</button>
+            <button id="clearCanvas">Clear Canvas</button>
+            <button id="downloadImage">Download Drawing</button>
+            <br><br>
+            <input type="text" id="aiPrompt" placeholder="Enter AI drawing description">
+            <button id="generateAIImage">Generate AI Image</button>
+        </div>
+    </div>
+    <script src="/js/site.js"></script>
+</body>
+</html>

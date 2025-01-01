@@ -31,6 +31,15 @@
                             <a class="nav-link @((ViewData["Title"] as string) == "Generate Image" ? "active" : "")"
                                asp-area="" asp-controller="ImageToText" asp-action="ImageToText">Generate Image to Text</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link @((ViewData["Title"] as string) == "AiDraw" ? "active" : "")"
+                               asp-area="" asp-controller="AiDraw" asp-action="AiDraw">Ai Draw</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @((ViewData["Title"] as string) == "Chat with AI" ? "active" : "")"
+                               asp-area="" asp-controller="Chat" asp-action="Chat">Chat with AI</a>
+                        </li>
                     </ul>
                 </div>
             </div>

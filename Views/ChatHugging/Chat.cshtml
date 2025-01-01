@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Chat with AI";
+}
+
+<h1>Chat with AI</h1>
+
+<form method="post" asp-action="Chat">
+    <div>
+        <label for="inputText">Your Message:</label>
+        <textarea name="inputText" id="inputText" rows="4"></textarea>
+    </div>
+
+    <button type="submit">Send</button>
+</form>
+
+<h2>Response:</h2>
+<p>@Model</p>
