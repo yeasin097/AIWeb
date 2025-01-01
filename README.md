@@ -12,7 +12,7 @@ Interactive and user-friendly design.
 
 Requirements
 
-.NET SDK (Version 6.0 or later)
+.NET SDK (Version 8.0 or later)
 
 A compatible development environment (Windows, Linux, or macOS)
 
