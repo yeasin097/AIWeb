@@ -29,7 +29,7 @@ namespace AiDraw.Controllers
         public async Task<IActionResult> GenerateImage([FromBody] AiRequest request)
         {
             // Replace with your OpenAI API Key
-            string apiKey = "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";
+            //string apiKey = "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";
             string openAiUrl = "https://api.openai.com/v1/images/generations";
 
             var payload = new

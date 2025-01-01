@@ -12,36 +12,40 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Make with AI</a>
+                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link @((ViewData["Title"] as string) == "Generate Audio" ? "active" : "")"
-                               asp-area="" asp-controller="Audio" asp-action="GenerateAudio">Generate Audio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @((ViewData["Title"] as string) == "Generate Image" ? "active" : "")"
-                               asp-area="" asp-controller="Image" asp-action="GenerateImage">Generate Text to Image</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @((ViewData["Title"] as string) == "Generate Image" ? "active" : "")"
-                               asp-area="" asp-controller="ImageToText" asp-action="ImageToText">Generate Image to Text</a>
-                        </li>
+                @* <div class="collapse navbar-collapse" id="navbarNav"> *@
+                @*     <ul class="navbar-nav ms-auto"> *@
+                @*         <li class="nav-item"> *@
+                @*             <a class="nav-link @((ViewData["Title"] as string) == "Generate Audio" ? "active" : "")" *@
+                @*                asp-area="" asp-controller="Audio" asp-action="GenerateAudio">Generate Audio</a> *@
+                @*         </li> *@
+                @*         <li class="nav-item"> *@
+                @*             <a class="nav-link @((ViewData["Title"] as string) == "Generate Image" ? "active" : "")" *@
+                @*                asp-area="" asp-controller="Image" asp-action="GenerateImage">Generate Text to Image</a> *@
+                @*         </li> *@
+                @*         <li class="nav-item"> *@
+                @*             <a class="nav-link @((ViewData["Title"] as string) == "Generate Image" ? "active" : "")" *@
+                @*                asp-area="" asp-controller="ImageToText" asp-action="ImageToText">Generate Image to Text</a> *@
+                @*         </li> *@
 
-                        <li class="nav-item">
-                            <a class="nav-link @((ViewData["Title"] as string) == "AiDraw" ? "active" : "")"
-                               asp-area="" asp-controller="AiDraw" asp-action="AiDraw">Ai Draw</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link @((ViewData["Title"] as string) == "Chat with AI" ? "active" : "")"
-                               asp-area="" asp-controller="Chat" asp-action="Chat">Chat with AI</a>
-                        </li>
-                    </ul>
-                </div>
+                @*         <li class="nav-item"> *@
+                @*             <a class="nav-link @((ViewData["Title"] as string) == "AiDraw" ? "active" : "")" *@
+                @*                asp-area="" asp-controller="AiDraw" asp-action="AiDraw">Ai Draw</a> *@
+                @*         </li> *@
+                @*         <li class="nav-item"> *@
+                @*             <a class="nav-link @((ViewData["Title"] as string) == "Chat with AI" ? "active" : "")" *@
+                @*                asp-area="" asp-controller="Chat" asp-action="Chat">Chat with AI</a> *@
+                @*         </li> *@
+                @*         <li class="nav-item"> *@
+                @*             <a class="nav-link @((ViewData["Title"] as string) == "Generate Logo" ? "active" : "")" *@
+                @*                asp-area="" asp-controller="Logo" asp-action="MakeLogo">Generate Logo</a> *@
+                @*         </li> *@
+                @*     </ul> *@
+                @* </div> *@
             </div>
         </nav>
     </header>
@@ -53,7 +57,8 @@
 
     <footer class="border-top footer text-muted mt-5">
         <div class="container text-center">
-            &copy; 2024 - AI Website - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2025 - Ultimate IT Solution Ltd - 
+            @* <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
         </div>
     </footer>
     @* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@

@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Generate Logo";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Generate Logo Description</h2>
+
+    <div class="card shadow-sm p-4">
+        <form asp-action="MakeLogo" method="post">
+            <div class="mb-3">
+                <label for="CompanyName" class="form-label">Company Name</label>
+                <input type="text" id="CompanyName" name="CompanyName" class="form-control" placeholder="Enter company name..." required />
+            </div>
+
+            <div class="mb-3">
+                <label for="CompanyType" class="form-label">Company Type</label>
+                <input type="text" id="CompanyType" name="CompanyType" class="form-control" placeholder="Enter company type..." required />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Generate Logo</button>
+        </form>
+    </div>
+
+    @* @if (ViewBag.LogoDescription != null) *@
+    @* { *@
+    @*     <div class="mt-5 text-center"> *@
+    @*         <h3 class="mb-3">Generated Logo Description</h3> *@
+    @*         <p><strong>Prompt:</strong> @ViewBag.LogoDescription</p> *@
+    @*     </div> *@
+    @* } *@
+
+    @if (ViewBag.ImageBase64 != null)
+    {
+        <div class="mt-5 text-center">
+            <h3 class="mb-3">Generated Logo</h3>
+            <p><strong>Logo for:</strong> @ViewBag.CompanyName</p>
+            <img src="@ViewBag.ImageBase64" alt="Generated Logo" class="img-fluid rounded shadow-lg" style="max-width: 100%; height: auto;" />
+        </div>
+    }
+    else if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger mt-3">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+</div>

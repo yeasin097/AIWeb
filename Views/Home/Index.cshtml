@@ -1,8 +1,64 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿   <!-- Jumbotron (Hero Section) -->
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to AI Tools</h1>
+    <p class="lead">Explore a variety of AI-powered tools to generate audio, images, logos, and more!</p>
+    <hr class="my-4">
+    <p>Choose a tool below to get started.</p>
+</div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="feature-box">
+                @* <img src="path-to-your-image/generate-audio.jpg" alt="Generate Audio"> *@
+                <h3>Generate Audio</h3>
+                <p>Create audio content with the power of AI. Transform text into realistic speech.</p>
+                <a href="@Url.Action("GenerateAudio", "Audio")" class="btn btn-primary">Start Now</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box">
+                @* <img src="path-to-your-image/text-to-image.jpg" alt="Generate Text to Image"> *@
+                <h3>Generate Image</h3>
+                <p>Transform your text descriptions into stunning visual images with AI technology.</p>
+                <a href="@Url.Action("GenerateImage", "Image")" class="btn btn-primary">Start Now</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box">
+                @* <img src="path-to-your-image/ai-draw.jpg" alt="AI Draw"> *@
+                <h3>AI Draw</h3>
+                <p>Let AI assist you in drawing and creating amazing art. Get started now!</p>
+                <a href="@Url.Action("AiDraw", "AiDraw")" class="btn btn-primary">Start Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="feature-box">
+                @* <img src="path-to-your-image/logo-generation.jpg" alt="Generate Logo"> *@
+                <h3>Generate Logo</h3>
+                <p>Generate unique logos for your brand, business, or project in seconds.</p>
+                <a href="@Url.Action("MakeLogo", "Logo")" class="btn btn-primary">Start Now</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box">
+                @* <img src="path-to-your-image/chat-ai.jpg" alt="Chat with AI"> *@
+                <h3>Chat with AI</h3>
+                <p>Engage in a conversation with an AI assistant. Ask questions or get help with tasks.</p>
+                <a href="@Url.Action("Chat", "Chat")" class="btn btn-primary">Start Now</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box">
+                @* <img src="path-to-your-image/image-to-text.jpg" alt="Generate Image to Text"> *@
+                <h3>Generate Caption</h3>
+                <p>Convert images into readable text with the help of AI. Try it now!</p>
+                <a href="@Url.Action("ImageToText", "ImageToText")" class="btn btn-primary">Start Now</a>
+            </div>
+        </div>
+    </div>
 </div>
