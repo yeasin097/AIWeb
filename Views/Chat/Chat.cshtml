@@ -1,31 +1,33 @@
 ﻿@model List<TextToAudioWebApp.Models.ChatMessage>
 
-<h1>OpenAPI Chat</h1>
+<h1 style="text-align: center; font-family: Arial, sans-serif;">OpenAPI Chat</h1>
 
-<div style="border: 1px solid #ccc; padding: 20px; max-width: 600px; margin: auto; border-radius: 10px; font-family: Arial, sans-serif;">
-    <!-- Chat Conversation -->
-    <div id="chat-container" style="height: 400px; overflow-y: auto; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9;">
-        @if (Model != null && Model.Any())
-        {
-            foreach (var message in Model)
+<div style="display: flex; justify-content: center; margin-top: 20px; font-family: Arial, sans-serif;">
+    <div style="width: 100%; max-width: 600px; display: flex; flex-direction: column; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <!-- Chat Conversation -->
+        <div id="chat-container" style="height: 500px; overflow-y: auto; padding: 15px; background-color: #f5f7fb; display: flex; flex-direction: column; gap: 10px;">
+            @if (Model != null && Model.Any())
             {
-                <div style="margin-bottom: 10px;">
-                    <strong>@message.Role:</strong>
-                    <p>@message.Content</p>
-                </div>
+                foreach (var message in Model)
+                {
+                    <div style="align-self: @(message.Role == "User" ? "flex-end" : "flex-start"); max-width: 70%; padding: 10px; border-radius: 15px; color: @(message.Role == "User" ? "#fff" : "#333"); background-color: @(message.Role == "User" ? "#007bff" : "#e9ecef");">
+                        <strong>@message.Role:</strong>
+                        <p style="margin: 5px 0 0;">@message.Content</p>
+                    </div>
+                }
             }
-        }
-        else
-        {
-            <p>No conversation yet. Start by typing a message below.</p>
-        }
-    </div>
+            else
+            {
+                <p style="text-align: center; color: #777;">No conversation yet. Start by typing a message below.</p>
+            }
+        </div>
 
-    <!-- Chat Input -->
-    <form asp-action="Chat" method="post" style="display: flex; flex-direction: column; gap: 10px;">
-        <textarea id="prompt" name="prompt" rows="4" placeholder="Type your message here..." style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
-        <button type="submit" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-            Send
-        </button>
-    </form>
+        <!-- Chat Input -->
+        <form asp-action="Chat" method="post" style="border-top: 1px solid #ddd; padding: 15px; background-color: #fff; display: flex; align-items: center; gap: 10px;">
+            <textarea id="prompt" name="prompt" rows="1" placeholder="Type a message..." style="flex: 1; resize: none; padding: 10px; border: 1px solid #ccc; border-radius: 20px; outline: none;"></textarea>
+            <button type="submit" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">
+                Send
+            </button>
+        </form>
+    </div>
 </div>

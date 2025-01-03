@@ -11,7 +11,8 @@ builder.Services.AddSingleton<HuggingFaceAPI>();
 // Add the OpenAIAPI service.
 builder.Services.AddSingleton<OpenAIAPI>(provider =>
 {
-    var apiKey = "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";
+    var apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY")
+                   ?? builder.Configuration["OpenAI:ApiKey"];
     var apiEndpoint = "https://api.openai.com/v1/completions";
     return new OpenAIAPI(apiKey, apiEndpoint);
 });
